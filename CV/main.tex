@@ -1,0 +1,132 @@
+\documentclass[11pt,a4paper]{article}
+
+% ====== ПАКЕТЫ ======
+\usepackage[utf8]{inputenc}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage{geometry}
+\geometry{a4paper, left=1.5cm, right=1.5cm, top=1cm, bottom=1cm}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{tabularx}
+
+% ====== ЦВЕТА ======
+\definecolor{maincolor}{HTML}{2F9E43}
+\definecolor{darktext}{HTML}{1A1A1A}
+\definecolor{lighttext}{HTML}{666666}
+
+\hypersetup{colorlinks=true, linkcolor=maincolor, urlcolor=maincolor}
+\pagestyle{empty}
+
+% ====== ЗАГОЛОВКИ ======
+\titleformat{\section}
+  {\Large\bfseries\color{maincolor}}
+  {}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{8pt}{3pt}
+
+% ====== НАСТРОЙКИ ======
+\setlist{leftmargin=*, nosep, itemsep=2pt}
+\setlength{\parindent}{0pt}
+
+% ====== КОМАНДЫ ======
+\newcommand{\cvevent}[4]{%
+  \vspace{3pt}
+  \noindent
+  {\bfseries\large #1} \hfill {\bfseries #4}\\
+  {\color{lighttext}\textit{#2}} \hfill {\color{lighttext}\textit{#3}}
+  \vspace{1pt}
+}
+
+% ====== НАЧАЛО ======
+\begin{document}
+
+% ===== ШАПКА =====
+\begin{center}
+  {\Huge\bfseries\color{darktext} Ольга Зырянова}
+  \vspace{2pt}
+  
+  {\large\color{lighttext} Backend Developer | Computer Science Student}
+  \vspace{6pt}
+  
+  \small
+  Москва, Россия \quad
+  +7 908 704-04-61 \quad
+  \href{mailto:olga.zyryanova14@gmail.com}{olga.zyryanova14@gmail.com} \\
+  \href{https://github.com/ssuunneedd}{github.com/ssuunneedd} \quad
+  \href{https://codeforces.com/profile/olyazyryanova}{codeforces.com}
+\end{center}
+
+\hrule
+\vspace{4pt}
+
+% ===== О СЕБЕ =====
+\section*{О себе}
+Студентка 1-го курса ФКН НИУ ВШЭ с опытом разработки и преподавания. 
+Призёр олимпиад по информатике и математике.
+
+% ===== ОБРАЗОВАНИЕ =====
+\section{Образование}
+
+\cvevent{НИУ ВШЭ, ФКН}{Прикладная математика и информатика}{2025 -- 2029}{Москва, Россия}
+\begin{itemize}
+  \item Средний балл: \textbf{8.88/10.0}
+\end{itemize}
+
+\cvevent{Школа ЦПМ}{Математика и информатика}{2022 -- 2025}{Москва, Россия}
+
+\cvevent{МБОУ ФМЛ №31}{Основное общее образование}{2018 -- 2022}{Челябинск, Россия}
+
+% ===== ОПЫТ РАБОТЫ =====
+\section{Опыт работы}
+
+\cvevent{Преподаватель}{Летняя компьютерная школа}{2025 -- 2026}{Кострома, Россия}
+\begin{itemize}
+  \item Провела лекции и практики для \textbf{30+ школьников} по алгоритмам и структурам данных
+  \item Разработала \textbf{15 учебных заданий}
+\end{itemize}
+
+% ===== НАВЫКИ =====
+\section{Навыки}
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  {\color{lighttext}\textbf{Языки:}} & Python, C++, Kotlin \\
+  {\color{lighttext}\textbf{Базы данных:}} & PostgreSQL \\
+  {\color{lighttext}\textbf{Data Science:}} & NumPy, Pandas, Spark, Matplotlib, Seaborn \\
+  {\color{lighttext}\textbf{Backend:}} & FastAPI, Django \\
+  {\color{lighttext}\textbf{Frontend:}} & Vue.js, JavaScript, HTML, CSS \\
+  {\color{lighttext}\textbf{Инструменты:}} & Git, Linux, Docker, LaTeX \\
+  {\color{lighttext}\textbf{Английский:}} & B2 \\
+\end{tabularx}
+
+% ===== ВОЛОНТЁРСТВО =====
+\section{Волонтёрство и общественная деятельность}
+
+\cvevent{Благотворцы}{Организатор благотворительной инициативы}{2026 -- наст. время}{Россия}
+\begin{itemize}
+  \item Организация благотворительных мастер-классов и мероприятий по рукоделию.
+  \item Координация работы волонтёров и взаимодействие с участниками проектов.
+  \item Привлечение средств и материалов для проведения благотворительных акций.
+\end{itemize}
+
+\cvevent{Волонтёрская деятельность}{Участник и организатор мероприятий}{2025 -- наст. время}{Россия}
+\begin{itemize}
+  \item Участие в образовательных, социальных и благотворительных проектах.
+  \item Организация мероприятий и работа с участниками.
+\end{itemize}
+
+% ===== КУРСЫ =====
+\section{Курсы}
+
+\cvevent{Яндекс Кружок}{Алгоритмы: параллели А и А'}{2022 -- 2024}{Москва, Россия}
+
+% ===== ДОСТИЖЕНИЯ =====
+\section{Достижения}
+
+\begin{itemize}
+  \item Призёр олимпиад по информатике и математике (2018--2025)
+  \item Codeforces: рейтинг \textbf{1800+}
+\end{itemize}
+
+\end{document}
