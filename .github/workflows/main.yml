@@ -1,0 +1,43 @@
+name: Build LaTeX CV
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          load: true
+          tags: cv-builder:latest
+
+      - name: Run build
+        run: |
+          docker run --rm -v $(pwd):/workspace cv-builder:latest
+
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CV-PDF
+          path: CV/*.pdf
+
+      - name: Commit and push PDF
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add CV/*.pdf
+          git diff --staged --quiet || git commit -m "Update CV PDF"
+          git push -f origin main
